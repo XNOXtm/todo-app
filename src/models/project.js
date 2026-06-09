@@ -6,11 +6,17 @@ export default class Project {
         this.id = crypto.randomUUID();
     }
 
-    todo_list = []
+    todoList = []
 
     addTodo(title, description, dueDate) {
         const todo = new Todo(title, description, dueDate);
-        this.todo_list.push(todo);
+        this.todoList.push(todo);
+    }
+
+    deleteTodo(id) {
+        let updated_todoList = this.todoList.filter(task => id !== task.id);
+        this.todoList = updated_todoList;
+        return this.todoList;
     }
 
 }
