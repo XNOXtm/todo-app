@@ -1,7 +1,6 @@
 * {
     margin: 0px;
     padding: 0px;
-    border: none;
 }
 
 body {
@@ -14,6 +13,7 @@ ul {
 }
 
 button {
+    border: none;
     cursor: pointer;
 }
 
@@ -150,4 +150,71 @@ header {
 }
 .todo > .delete-todo:active {
     background-color: #e81603;
+}
+
+#project-form-container {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+#project-form {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#project-form label {
+    font-size: 0.9em;
+    margin: 2rem 0 0.5rem 0;
+}
+
+#project-form input {
+    margin-bottom: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #feb270;
+    width: 400px;
+}
+
+#project-form input:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px #fbddc3;
+}
+
+#project-form-btns {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#cancelbtn, #submitbtn {
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 12px;
+    border-radius: 8px;
+}
+
+#cancelbtn {
+    background-color: #fff8f1;
+    border: 1px solid #f9e9da;
+}
+#cancelbtn:hover {
+    background-color: #f9e9da;
+}
+
+#submitbtn {
+    background-color: #ec493a;
+    color: white;
+}
+#submitbtn:hover {
+    background-color: #d93b2c;
 }
