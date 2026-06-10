@@ -1,8 +1,8 @@
 import Todo from "./todo.js";
 
 export default class Project {
-    constructor(projectTile) {
-        this.projectTile = projectTile;
+    constructor(projectTitle) {
+        this.projectTitle = projectTitle;
         this.id = crypto.randomUUID();
     }
 

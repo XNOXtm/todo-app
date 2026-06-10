@@ -2,8 +2,8 @@ import Project from "./project.js";
 
 export let projectList = [];
 
-export function addProject(projectTile) {
-        const project = new Project(projectTile);
+export function addProject(projectTitle) {
+        const project = new Project(projectTitle);
         projectList.push(project);
         return project;
 };
@@ -13,4 +13,3 @@ export function deleteProject(id) {
         projectList = updated_projectList;
         return projectList;
 };
-
