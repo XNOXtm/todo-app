@@ -46,6 +46,8 @@ header {
     padding: 1em 1.5em;
     background-color: #f15243;
     border-radius: 10px;
+    color: white;
+    font-weight: bold;
 }
 
 #add-project:hover,
@@ -56,12 +58,6 @@ header {
 #add-project:active,
 #add-todo:active {
     background-color: #ef7368;
-}
-
-#add-project p,
-#add-todo p {
-    color: white;
-    font-weight: bold;
 }
 
 .project {
@@ -109,9 +105,10 @@ header {
 }
 
 .todo {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50vw;
+    width: 70vw;
     border: 2px solid #feb270;
     border-radius: 8px;
     padding: 8px 15px;
@@ -126,30 +123,51 @@ header {
     background-color: #fef0e4;
 }
 
-.todo > .checkbox {
+.checkbox {
     background-color: white;
     border-radius: 40%;
+    margin-right: 8px;
 }
 
-.todo > .title {
+.title {
     font-weight: bold;
 }
 
-.todo > .description {
-    color: rgb(148, 148, 148);
+.todo-contents {
+    display: flex;
 }
 
-.todo > .delete-todo {
+.title ,
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 8px 0 8px;
+}
+
+
+.description {
+    color: rgb(148, 148, 148);
+    overflow-wrap: break-word;
+    min-width: 0;
+    width: 25vw;
+}
+.due-date {
+    margin: 0 8px 0 8px;
+}
+
+.delete-todo {
+    margin-left: 8px;
     border-radius: 3px;
     background-color: #f02c1a;
     padding: 3px 8px;
     color: white;
 }
 
-.todo > .delete-todo:hover {
+.delete-todo:hover {
     background-color: #eb675b;
 }
-.todo > .delete-todo:active {
+.delete-todo:active {
     background-color: #e81603;
 }
 

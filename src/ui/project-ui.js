@@ -1,4 +1,5 @@
 import { projectList, addProject, deleteProject } from "../models/project_list.js";
+import openProject from "./todo-ui.js"
 
 function closeForm() {
     document.querySelector("#project-form-container").style.display = "none";
@@ -11,12 +12,6 @@ function openForm() {
 function removeProject(projectId) {
     deleteProject(projectId);
     renderProject();
-}
-
-function openProject(project) {
-    const projectHeading = document.querySelector('.project-heading');
-    projectHeading.innerHTML = '';
-    projectHeading.textContent = project.projectTitle;
 }
 
 export default function renderProject() {
@@ -62,8 +57,8 @@ projectForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-
     const data = Object.fromEntries(formData.entries());
+
     addProject(data.projectName);
     renderProject();
     closeForm();
