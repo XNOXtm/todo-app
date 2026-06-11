@@ -50,7 +50,7 @@ export default function renderProject() {
 }
 
 
-const cancelBtn = document.querySelector("#cancelbtn");
+const cancelBtn = document.querySelector("#cancelProject");
 cancelBtn.addEventListener("click", closeForm);
 
 const createProjectBtn = document.querySelector("#add-project");

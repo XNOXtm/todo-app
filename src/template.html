@@ -32,7 +32,7 @@
         </div>
         <div id="content">
             <div id="content-header">
-                <div class="project-heading">Project 1</div>
+                <div class="project-heading"></div>
                 <button id="add-todo"><p>+ Add Todo</p></button>
             </div>
             <div id="todo-section">
@@ -71,8 +71,44 @@
             <input type="text" name="projectName" id="projectName" placeholder="e.g., Personal Finances" required>
 
             <div id="project-form-btns">
-                <button id="cancelbtn" type="button">Cancel</button>
-                <button id="submitbtn" type="submit">Create Project</button>
+                <button class="cancelbtn" id="cancelProject" type="button">Cancel</button>
+                <button class="submitbtn" id="createProject" type="submit">Create Project</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="todo-form-container">
+        <form id="todo-form" action="" method="get">
+            <h2>Create New Task</h2>
+
+            <label for="todoTitle"><b>Title:</b></label>
+            <input type="text" name="todoTitle" id="todoTitle" placeholder="e.g., Finish Homework" required>
+
+            <label for="todoDescription"><b>Description:</b></label>
+            <textarea id="todoDescription" name="todoDescription" rows="3" cols="30" placeholder="Type your text here..."></textarea>
+
+            <div id="date-radio">
+                <div id="date-container">
+                    <label for="dueDate"><b>Due Date:</b></label>
+                    <input type="date" name="dueDate" id="dueDate">
+                </div>
+                <div id="radio-container">
+                    <p><b>Set Priority:</b></p>
+                    <div id="radios">
+                        <input type="radio" id="low" name="priority" value="low">
+                        <label for="low">Low</label>
+                        <input type="radio" id="mid" name="priority" value="mid">
+                        <label for="mid">Midium</label>
+                        <input type="radio" id="high" name="priority" value="high">
+                        <label for="high">High</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="todo-form-btns">
+                <button class="cancelbtn" id="cancelTask" type="button">Cancel</button>
+                <button class="submitbtn" id="createTask" type="submit">Create Task</button>
             </div>
         </form>
     </div>
