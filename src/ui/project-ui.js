@@ -13,7 +13,13 @@ function removeProject(projectId) {
     renderProject();
 }
 
-function renderProject() {
+function openProject(project) {
+    const projectHeading = document.querySelector('.project-heading');
+    projectHeading.innerHTML = '';
+    projectHeading.textContent = project.projectTitle;
+}
+
+export default function renderProject() {
     const projectSection = document.getElementById("project-list");
     projectSection.innerHTML = '';
 
@@ -36,8 +42,11 @@ function renderProject() {
             removeProject(project.id);
         });
 
+        projectElement.addEventListener("click", (event) => {
+            openProject(project);
+        })
+
     };
-    console.log(projectList)
 }
 
 

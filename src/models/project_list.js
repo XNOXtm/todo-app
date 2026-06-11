@@ -1,6 +1,8 @@
 import Project from "./project.js";
 
 export let projectList = [];
+const project = addProject("Kitchen");
+project.addTodo("Dishes", "wash the dishes in the sink", "09-06-2026");
 
 export function addProject(projectTitle) {
         const project = new Project(projectTitle);
@@ -13,3 +15,4 @@ export function deleteProject(id) {
         projectList = updated_projectList;
         return projectList;
 };
+

@@ -1,5 +1,6 @@
 import "./styles.css";
 import "./ui/project-ui.js";
+import renderProject from "./ui/project-ui.js";
 
 
 // const project1 = addProject("Kitchen");
@@ -14,4 +15,4 @@ import "./ui/project-ui.js";
 // deleteProject(projectList[0].id);
 
 
-
+renderProject();
