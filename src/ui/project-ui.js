@@ -64,7 +64,10 @@ projectForm.addEventListener('submit', (event) => {
     const formData = new FormData(event.target);
 
     const data = Object.fromEntries(formData.entries());
-    const project = addProject(data.projectName);
+    addProject(data.projectName);
     renderProject();
+    closeForm();
+
+    event.target.reset();
 })
 
