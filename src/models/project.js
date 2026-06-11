@@ -8,8 +8,8 @@ export default class Project {
 
     todoList = []
 
-    addTodo(title, description, dueDate) {
-        const todo = new Todo(title, description, dueDate);
+    addTodo(title, description, dueDate, priority) {
+        const todo = new Todo(title, description, dueDate, priority);
         this.todoList.push(todo);
     }
 

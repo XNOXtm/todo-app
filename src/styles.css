@@ -17,6 +17,9 @@ button {
     border: none;
     cursor: pointer;
 }
+button:focus {
+    outline: none;
+}
 
 main, #content-header, .todo {
     display: flex;
@@ -104,15 +107,41 @@ header {
     font-size: 1.8em;
 }
 
-.todo {
+.todo, .todoDone {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70vw;
-    border: 2px solid #feb270;
     border-radius: 8px;
-    padding: 8px 15px;
     margin-bottom: 10px;
+    padding: 8px 15px;
+}
+
+.todo {
+    border: 2px solid #feb270;
+}
+
+.todoDone {
+    border: 2px solid #cfcdcb;
+    background-color: #f1f0ee;
+}
+.todoDone .title,
+.todoDone .due-date {
+    color: rgb(148, 148, 148);
+    
+}
+.todoDone .checkbox {
+    background-color: #f1f0ee;
+    color: rgb(148, 148, 148);
+}
+.todoDone .description {
+    color: rgb(204, 202, 202);
+}
+.todoDone:hover {
+    background-color: #e7e5e3;
+}
+.todoDone:hover .checkbox {
+    background-color: #e7e5e3;
 }
 
 .todo:hover {
@@ -126,7 +155,8 @@ header {
 .checkbox {
     background-color: white;
     border-radius: 40%;
-    margin-right: 8px;
+    margin-right: 5px;
+    font-size: 20px ;
 }
 
 .title {

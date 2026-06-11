@@ -1,5 +1,5 @@
 import { projectList, addProject, deleteProject } from "../models/project_list.js";
-import openProject from "./todo-ui.js"
+import openProject from "./todo-ui.js";
 
 function closeForm() {
     document.querySelector("#project-form-container").style.display = "none";

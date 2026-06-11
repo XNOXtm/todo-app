@@ -8,10 +8,9 @@ function openForm() {
     document.querySelector("#todo-form-container").style.display = "flex";
 }
 
+function toggleIsDone() {
 
-const closeTodoFrom = document.querySelector('#cancelTask');
-closeTodoFrom.addEventListener('click', closeForm);
-
+}
 
 export default function openProject(project) {
     const contentHeader = document.getElementById("content-header");
@@ -35,30 +34,33 @@ export default function openProject(project) {
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData.entries());
         
-        // console.log(project.todoList)
-        // console.log(data)
+        project.addTodo(data.todoTitle, data.todoDescription, data.dueDate, data.priority);
+        renderTodo(project);
+        closeForm();
+        
+        event.target.reset();
     })
     
-    renderTodo(project.todoList);
-    
+    renderTodo(project);
 }
 
-function renderTodo(todoList) {
+function renderTodo(project) {
+    const todoList = project.todoList;
     const todoSection = document.getElementById("todo-list");
     todoSection.innerHTML = '';
 
-    // console.log(todoList[0].title)
     for (let todo of todoList) {
         const todoElement = document.createElement('li');
         todoElement.classList.add('todo');
-
+        
         const todoDiv1 = document.createElement('div');
         todoDiv1.classList.add('todo-contents');
-
+        
         const todoButton = document.createElement('button');
         todoButton.classList.add('checkbox');
-        todoButton.textContent = "O";
+        todoButton.textContent = "○";
         todoDiv1.append(todoButton);
+        
         const todoTitle = document.createElement('div');
         todoTitle.classList.add('title');
         todoTitle.textContent = todo.title;
@@ -72,18 +74,40 @@ function renderTodo(todoList) {
         
         const todoDiv2 = document.createElement('div');
         todoDiv2.classList.add('todo-contents');
-
+        
         const todoDueDate = document.createElement('div');
         todoDueDate.classList.add('due-date');
         todoDueDate.textContent = todo.dueDate;
         todoDiv2.append(todoDueDate);
-        const deleteTodo = document.createElement('button');
-        deleteTodo.classList.add('delete-todo');
-        deleteTodo.textContent = "Delete";
-        todoDiv2.append(deleteTodo);
+        const deleteTodoBtn = document.createElement('button');
+        deleteTodoBtn.classList.add('delete-todo');
+        deleteTodoBtn.textContent = "Delete";
+        todoDiv2.append(deleteTodoBtn);
         todoElement.append(todoDiv2);
+        
+        todoSection.append(todoElement);
+        
+        todoButton.addEventListener("click", ()=> {
+            if (todo.isDone !== true) {
+                todo.isDone = true;
+                todoButton.textContent = "●";
+                todoTitle.style.textDecoration = "line-through";
+                todoElement.classList.remove('todo')
+                todoElement.classList.add('todoDone')
+            }else {
+                todo.isDone = false;
+                todoButton.textContent = "○";
+                todoTitle.style.textDecoration = "none";
+                todoElement.classList.remove('todoDone')
+                todoElement.classList.add('todo')
+            }
+        })
 
-        todoSection.append(todoElement)
+        deleteTodoBtn.addEventListener('click', () => {
+            project.deleteTodo(todo.id);
+            renderTodo(project);
+        })
     }
-
 }
+
+const closeTodoFrom = document.querySelector('#cancelTask');closeTodoFrom.addEventListener('click', closeForm);
