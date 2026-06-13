@@ -14,13 +14,15 @@ function removeProject(projectId) {
     renderProject();
 }
 
+let activeProjectId = null;
+
 export default function renderProject() {
     const projectSection = document.getElementById("project-list");
     projectSection.innerHTML = '';
 
     for (let project of projectList) {
         const projectElement =document.createElement('li');
-        projectElement.classList.add('project');
+        projectElement.classList.add('project', 'project-default');
         
         const projectName = document.createElement('div');
         projectName.classList.add('project-name');
@@ -31,6 +33,11 @@ export default function renderProject() {
         deleteBtn.textContent = "X";
         projectElement.append(deleteBtn);
 
+        if (project.id === activeProjectId) {
+            projectElement.classList.remove('project-default')
+            projectElement.classList.add('active-project')
+        }
+
         projectSection.append(projectElement);
 
         deleteBtn.addEventListener("click", (event) => {
@@ -38,12 +45,14 @@ export default function renderProject() {
         });
 
         projectElement.addEventListener("click", (event) => {
+            activeProjectId = project.id;
+            renderProject();
             openProject(project);
         })
 
     };
-}
 
+}
 
 const cancelBtn = document.querySelector("#cancelProject");
 cancelBtn.addEventListener("click", closeForm);
