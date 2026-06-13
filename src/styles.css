@@ -114,7 +114,7 @@ header {
     width: 70vw;
     border-radius: 8px;
     margin-bottom: 10px;
-    padding: 8px 15px;
+    padding: 8px 5px 8px 15px;
 }
 
 .todo {
@@ -127,20 +127,22 @@ header {
 }
 .todoDone .title,
 .todoDone .due-date {
-    color: rgb(148, 148, 148);
+    color: rgb(182, 180, 180);
     
 }
-.todoDone .checkbox {
+.todoDone .checkbox,
+.todoDone .editBtn {
     background-color: #f1f0ee;
     color: rgb(148, 148, 148);
 }
 .todoDone .description {
     color: rgb(204, 202, 202);
 }
-.todoDone:hover {
-    background-color: #e7e5e3;
-}
-.todoDone:hover .checkbox {
+
+.todoDone:hover,
+.todoDone:hover .checkbox,
+.todoDone:hover .todo-priority,
+.todoDone:hover .editBtn{
     background-color: #e7e5e3;
 }
 
@@ -148,14 +150,16 @@ header {
     background-color: #fef0e4;
 }
 
-.todo:hover .checkbox {
+.todo:hover .checkbox,
+.todo:hover .todo-priority,
+.todo:hover .editBtn {
     background-color: #fef0e4;
 }
 
-.checkbox {
-    background-color: white;
-    border-radius: 40%;
-    margin-right: 5px;
+.checkbox,
+.editBtn {
+    background-color: #fcfaf8;
+    padding-right: 5px;
     font-size: 20px ;
 }
 
@@ -165,6 +169,7 @@ header {
 
 .todo-contents {
     display: flex;
+    align-items: center;
 }
 
 .title ,
@@ -186,6 +191,37 @@ header {
     margin: 0 8px 0 8px;
 }
 
+.todo-priority {
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 100;
+    background-color: #fcfaf8;
+    cursor: default;
+}
+
+.todoDone .todo-priority,
+.todoDone .priority-high,
+.todoDone .priority-mid,
+.todoDone .priority-low {
+    border: 2px solid #cfcdcb;
+    background-color: #f1f0ee;
+    color: #cfcdcb;
+}
+
+
+.priority-high {
+    border: 2px solid red;
+    color: red;
+}
+.priority-mid {
+    border: 2px solid orange;
+    color: orange;
+}
+.priority-low {
+    border: 2px solid green;
+    color: green;
+}
+
 .delete-todo {
     margin-left: 8px;
     border-radius: 3px;
@@ -201,8 +237,18 @@ header {
     background-color: #e81603;
 }
 
+.editBtn {
+    margin-left: 18px;
+    padding: 0;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+}
+
 #project-form-container,
-#todo-form-container {
+#todo-form-container,
+#todo-edit-container {
     position: fixed;
     inset: 0;
     
@@ -212,6 +258,7 @@ header {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
 }
+
 
 form {
     background-color: white;
@@ -226,7 +273,7 @@ form h2 {
 }
 
 label,
-#radio-container p {
+radio-container p {
     font-size: 0.9em;
     margin-bottom: 0.5rem;
 }
@@ -251,41 +298,42 @@ textarea:focus {
     box-shadow: 0 0 2px 3px #fbddc3;
 }
 
-#date-radio {
+.date-radio {
     display: flex;
     justify-content: space-between;
     align-items: start;
 }
 
-#date-container{
+.date-container{
     display: flex;
     flex-direction: column;
 }
 
-#radio-container label {
+.radio-container label {
     margin-right: 10px;
 }
 
-#radios {
+.radios {
     display: flex;
     align-items: center;
 }
-#radios label {
+.radios label {
     margin: 5px 12px 5px 0;
 }
 
-#radios input[type="radio"] {
+.radios input[type="radio"] {
     accent-color: #ec493a;
     cursor: pointer;
     transform: scale(1.2);
     margin: 8px
 }
-#radios input[type="radio"]:focus {
+.radios input[type="radio"]:focus {
     box-shadow: none;
 }
 
 #project-form-btns,
-#todo-form-btns {
+#todo-form-btns,
+#todo-edit-btns {
     margin-top: 1.5rem;
     display: flex;
     justify-content: end;
