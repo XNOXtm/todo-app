@@ -7,7 +7,6 @@ export function saveProjects() {
 }
 
 export function loadProjects() {
-    // localStorage.clear();
     const savedProjects = JSON.parse(localStorage.getItem('projects'));
 
     if (!savedProjects) return;

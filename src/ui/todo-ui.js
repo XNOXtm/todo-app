@@ -46,24 +46,25 @@ function editTodoForm(todo,project) {
     })
 }
 
-function addTodoFrom(project) {
-    const todoForm = document.getElementById('todo-form');
-    todoForm.addEventListener("submit", (event)=> {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData.entries());
-        
-        project.addTodo(data.todoTitle, data.todoDescription, data.dueDate, data.priority, false);
-        renderTodo(project);
-        closeForm();
-        
-        event.target.reset();
-        renderTodo(project);
-    })
+function handleTodoSubmit(event) {
+    event.preventDefault();
+
+    if (!currentProject) return;
+    
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    
+    currentProject.addTodo(data.todoTitle, data.todoDescription, data.dueDate, data.priority, false);
+
+    renderTodo(currentProject);
+    closeForm();
+    event.target.reset();
 }
 
+let currentProject = null;
+
 export default function openProject(project) {
+    currentProject = project;
     const contentHeader = document.getElementById("content-header");
     contentHeader.innerHTML = '';
     
@@ -77,7 +78,6 @@ export default function openProject(project) {
     addTodoBtn.textContent = "+ Add Todo";
     contentHeader.append(addTodoBtn);
     addTodoBtn.addEventListener("click", openForm);
-    addTodoFrom(project)
     renderTodo(project);
 }
 
@@ -175,12 +175,26 @@ function renderTodo(project) {
     }
 }
 
+export function clearCurrentProject() {
+    currentProject = null;
+
+    const header = document.getElementById('content-header');
+    header.innerHTML= "";
+
+    const msg = document.createElement('div');
+    msg.id = "msg";
+    msg.textContent = "Select a Project";
+    header.append(msg);
+
+    document.getElementById('todo-list').innerHTML = "";
+}
+
 const closeTodoFrom = document.querySelector('#cancelTask');
 closeTodoFrom.addEventListener('click', closeForm);
+
 const closeEditFrom = document.querySelector('#cancelEdit');
 closeEditFrom.addEventListener('click', closeEditForm);
 
-
-
-
+const todoForm = document.getElementById('todo-form');
+todoForm.addEventListener("submit", handleTodoSubmit);
 

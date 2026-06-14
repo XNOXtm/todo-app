@@ -1,5 +1,5 @@
 import { projectList, addProject, deleteProject } from "../models/project_list.js";
-import openProject from "./todo-ui.js";
+import openProject, { clearCurrentProject } from "./todo-ui.js";
 
 function closeForm() {
     document.querySelector("#project-form-container").style.display = "none";
@@ -11,6 +11,12 @@ function openForm() {
 
 function removeProject(projectId) {
     deleteProject(projectId);
+
+    if (activeProjectId === projectId) {
+        activeProjectId = null;
+    }
+
+    clearCurrentProject();
     renderProject();
 }
 
@@ -45,6 +51,8 @@ export default function renderProject() {
         });
 
         projectElement.addEventListener("click", (event) => {
+            if (!projectList.includes(project)) return;
+            
             activeProjectId = project.id;
             renderProject();
             openProject(project);
