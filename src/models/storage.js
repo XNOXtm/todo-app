@@ -1,4 +1,6 @@
-import { addProject, projectList } from "./project_list.js";
+import Project from "./project.js";
+import Todo from "./todo.js";
+import { projectList } from "./project_list.js";
 
 export function saveProjects() {
     localStorage.setItem('projects', JSON.stringify(projectList));
@@ -8,15 +10,20 @@ export function loadProjects() {
     // localStorage.clear();
     const savedProjects = JSON.parse(localStorage.getItem('projects'));
 
-    if (savedProjects) {
-        for (let project of savedProjects) {
-            const newProject = addProject(project.projectTitle);
-            for (let todo of project.todoList){
-                newProject.addTodo(todo.title, todo.description, todo.dueDate, todo.priority, todo.isDone);
-                console.log(todo.isDone)
-            }
-    
-        }
-    }
+    if (!savedProjects) return;
 
+    projectList.length === 0;
+
+    for (let project of savedProjects) {
+        const newProject = new Project(project.projectTitle);
+        newProject.id = project.id;
+
+        for (let todo of project.todoList){
+            const newTodo = new Todo(todo.title, todo.description, todo.dueDate, todo.priority, todo.isDone);
+            newTodo.id = todo.id;
+            newProject.todoList.push(newTodo);
+        }
+
+        projectList.push(newProject);
+    }
 }

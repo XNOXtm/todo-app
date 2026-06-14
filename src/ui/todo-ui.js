@@ -54,7 +54,7 @@ function addTodoFrom(project) {
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData.entries());
         
-        project.addTodo(data.todoTitle, data.todoDescription, data.dueDate, data.priority);
+        project.addTodo(data.todoTitle, data.todoDescription, data.dueDate, data.priority, false);
         renderTodo(project);
         closeForm();
         
