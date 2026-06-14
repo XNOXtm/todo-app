@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>TaskD</title>
+<script defer src="main.js"></script></head>
+<body>
+    <header>
+        <h1>TaskD</h1>
+    </header>
+    <main>
+        <div id="sidebar">
+            <h3>My Projects</h3>
+            <div id="sidebar-btn">
+                <button id="add-project">+ Add Project</button>
+            </div>
+            <ul id="project-list"></ul>
+        </div>
+        <div id="content">
+            <div id="content-header">Select a Project</div>
+            <div id="todo-section">
+                <ul id="todo-list"></ul>
+            </div>
+        </div>
+    </main>
+
+    <div id="project-form-container">
+        <form id="project-form" action="" method="get">
+            <h2>Create New Project</h2>
+
+            <label for="projectName"><b>Project Name:</b></label>
+            <input type="text" name="projectName" id="projectName" placeholder="e.g., Personal Finances" required>
+
+            <div id="project-form-btns">
+                <button class="cancelbtn" id="cancelProject" type="button">Cancel</button>
+                <button class="submitbtn" id="createProject" type="submit">Create Project</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="todo-form-container">
+        <form id="todo-form" action="" method="get">
+            <h2>Create New Task</h2>
+
+            <label for="todoTitle"><b>Title:</b></label>
+            <input type="text" name="todoTitle" id="todoTitle" placeholder="e.g., Finish Homework" required>
+
+            <label for="todoDescription"><b>Description:</b></label>
+            <textarea id="todoDescription" name="todoDescription" rows="3" cols="30" placeholder="Type your text here..."></textarea>
+
+            <div class="date-radio">
+                <div class="date-container">
+                    <label for="dueDate"><b>Due Date:</b></label>
+                    <input type="date" name="dueDate" id="dueDate">
+                </div>
+                <div class="radio-container">
+                    <p><b>Set Priority:</b></p>
+                    <div class="radios">
+                        <input type="radio" id="low" name="priority" value="low">
+                        <label for="low">Low</label>
+                        <input type="radio" id="mid" name="priority" value="mid">
+                        <label for="mid">Midium</label>
+                        <input type="radio" id="high" name="priority" value="high">
+                        <label for="high">High</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="todo-form-btns">
+                <button class="cancelbtn" id="cancelTask" type="button">Cancel</button>
+                <button class="submitbtn" id="createTask" type="submit">Create Task</button>
+            </div>
+        </form>
+    </div>
+    <div id="todo-edit-container">
+        <form id="edit-form" action="" method="get">
+            <h2>Edit Task</h2>
+
+            <label for="editTitle"><b>Title:</b></label>
+            <input type="text" name="editTitle" id="editTitle" placeholder="e.g., Finish Homework" required>
+
+            <label for="editDescription"><b>Description:</b></label>
+            <textarea id="editDescription" name="editDescription" rows="3" cols="30" placeholder="Type your text here..."></textarea>
+
+            <div class="date-radio">
+                <div class="date-container">
+                    <label for="editDueDate"><b>Due Date:</b></label>
+                    <input type="date" name="editDueDate" id="editDueDate">
+                </div>
+                <div class="radio-container">
+                    <p><b>Set Priority:</b></p>
+                    <div class="radios">
+                        <input type="radio" id="editLow" name="priority" value="low">
+                        <label for="editLow">Low</label>
+                        <input type="radio" id="editMid" name="priority" value="mid">
+                        <label for="editMid">Midium</label>
+                        <input type="radio" id="editHigh" name="priority" value="high">
+                        <label for="editHigh">High</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="todo-edit-btns">
+                <button class="cancelbtn" id="cancelEdit" type="button">Cancel</button>
+                <button class="submitbtn" id="createTask" type="submit">Confirm</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
