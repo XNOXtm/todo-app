@@ -1,4 +1,6 @@
 import { projectList, addProject, deleteProject } from "../models/project_list.js";
+import { saveProjects } from "../models/storage.js";
+import renderProject from "./project-ui.js";
 
 function openForm() {
     document.querySelector("#todo-form-container").style.display = "flex";
@@ -38,12 +40,13 @@ function editTodoForm(todo,project) {
         todo.description = data.editDescription;
         todo.dueDate = data.editDueDate;
         todo.priority = data.priority;
+        saveProjects();
         renderTodo(project);
         closeEditForm();
     })
 }
 
-function submitTodoFrom(project) {
+function addTodoFrom(project) {
     const todoForm = document.getElementById('todo-form');
     todoForm.addEventListener("submit", (event)=> {
         event.preventDefault();
@@ -74,7 +77,7 @@ export default function openProject(project) {
     addTodoBtn.textContent = "+ Add Todo";
     contentHeader.append(addTodoBtn);
     addTodoBtn.addEventListener("click", openForm);
-    submitTodoFrom(project)
+    addTodoFrom(project)
     renderTodo(project);
 }
 
@@ -146,20 +149,20 @@ function renderTodo(project) {
         todoSection.append(todoElement);
         
         todoButton.addEventListener("click", ()=> {
-            if (todo.isDone !== true) {
-                todo.isDone = true;
-                todoButton.textContent = "●";
-                todoTitle.style.textDecoration = "line-through";
-                todoElement.classList.remove('todo')
-                todoElement.classList.add('todoDone')
-            }else {
-                todo.isDone = false;
-                todoButton.textContent = "○";
-                todoTitle.style.textDecoration = "none";
-                todoElement.classList.remove('todoDone')
-                todoElement.classList.add('todo')
-            }
-        })
+            todo.toggleDone();
+            saveProjects();
+            renderTodo(project);
+        });
+
+        todoElement.classList.remove('todo','todoDone')
+        if (todo.isDone) {
+            todoButton.textContent = "●";
+            todoTitle.style.textDecoration = "line-through";
+            todoElement.classList.add('todoDone')
+        }else {
+            todoButton.textContent = "○";
+            todoElement.classList.add('todo');
+        }
 
         editBtn.addEventListener('click', ()=> {
             openEditForm(todo,project)
