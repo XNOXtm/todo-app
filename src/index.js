@@ -7,7 +7,7 @@ import { defaultProjects, projectList } from "./models/project_list.js";
 
 loadProjects();
 
-if (projectList.length === 0){
+if (!projectList || projectList.length === 0){
     defaultProjects();
 }
 
