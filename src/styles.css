@@ -27,15 +27,16 @@ main, #content-header, .todo {
 }
 
 header {
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     color: #dd4a3d;
-
+    font-family: "Black Ops One", system-ui;
+    font-size: 1.5em;
 }
 
 #sidebar {
     background-color: #fef0e4;
     height: 100vh;
-    width: 20vw;
+    width: 15vw;
     padding: 1em;
 }
 #sidebar-btn {
@@ -45,6 +46,9 @@ header {
     margin: 20px 0px;
 }
 
+#add-project {
+    width: 100%;
+}
 #add-project, #add-todo {
     padding: 1em 1.5em;
     background-color: #f15243;

@@ -1,6 +1,4 @@
 import { projectList, addProject, deleteProject } from "../models/project_list.js";
-import editIcon from "../assets/edit.svg";
-
 
 function openForm() {
     document.querySelector("#todo-form-container").style.display = "flex";
