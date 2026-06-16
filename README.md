@@ -1,27 +1,34 @@
-# Todo Project
+# TaskD
 
-A simple project and todo app built with vanilla JavaScript.
+A simple todo app built with vanilla JavaScript as part of The Odin Project.
 
 ## Features
 
 - Create and delete projects
 - Add, edit, and delete todos
-- Mark todos as completed
-- Data saved in localStorage
-- Active project selection with UI feedback
+- Mark tasks as complete
+- Set priorities and due dates
+- Data is saved using local storage
+- Responsive and clean UI
+- Built with ES Modules and Webpack
 
-## How it works
+## Built With
 
-Select a project to view its todos.  
-Each project has its own todo list, and all changes are saved automatically in the browser.
-
-## Tech used
-
+- JavaScript
 - HTML
 - CSS
-- JavaScript (ES Modules)
-- localStorage
+- Webpack
+- Local Storage API
 
-## Notes
+## Live Demo
 
-Built for learning DOM manipulation, state handling, and modular JS structure.
+https://xnoxtm.github.io/todo-app/
+
+## Getting Started
+
+```bash
+git clone https://github.com/XNOXtm/todo-app.git
+cd todo-app
+npm install
+npm start
+```
