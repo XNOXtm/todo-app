@@ -1,375 +1,376 @@
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-    background-color: #fed4b0;
-    overflow: hidden;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #fed4b0;
+  overflow: hidden;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 button {
-    border: none;
-    cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
 button:focus {
-    outline: none;
+  outline: none;
 }
 
-main, #content-header, .todo {
-    display: flex;
-    flex-direction: row;
+main,
+#content-header,
+.todo {
+  display: flex;
+  flex-direction: row;
 }
 
 header {
-    padding: 0.5em 1em;
-    color: #dd4a3d;
-    font-family: "Black Ops One", system-ui;
-    letter-spacing: 2px;
-    font-size: 1.5em;
+  padding: 0.5em 1em;
+  color: #dd4a3d;
+  font-family: "Black Ops One", system-ui;
+  letter-spacing: 2px;
+  font-size: 1.5em;
 }
 
 #msg {
-    font-size: 30px;
-    font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #sidebar {
-    background-color: #fef0e4;
-    height: 100vh;
-    width: 15vw;
-    padding: 1em;
+  background-color: #fef0e4;
+  height: 100vh;
+  width: 15vw;
+  padding: 1em;
 }
 #sidebar-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
 }
 
 #add-project {
-    width: 100%;
+  width: 100%;
 }
-#add-project, #add-todo {
-    padding: 1em 1.5em;
-    background-color: #f15243;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
+#add-project,
+#add-todo {
+  padding: 1em 1.5em;
+  background-color: #f15243;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
 }
 
 #add-project:hover,
 #add-todo:hover {
-    background-color: #f02c1a;
+  background-color: #f02c1a;
 }
 
 #add-project:active,
 #add-todo:active {
-    background-color: #ef7368;
+  background-color: #ef7368;
 }
 
 .project {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    border-left: 2px solid #f15243;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-left: 2px solid #f15243;
 }
 .active-project,
 .project:hover {
-    background-color: #fce4d0 ;
+  background-color: #fce4d0;
 }
 
 .delete-project {
-    background-color: #fef0e4;
-    color: #fef0e4 ;
-    font-weight: bold;
+  background-color: #fef0e4;
+  color: #fef0e4;
+  font-weight: bold;
 }
 .active-project .delete-project,
 .project:hover .delete-project {
-    background-color: #fce4d0 ;
-    color: #fce4d0 ;
-    color: rgb(50, 50, 50);
+  background-color: #fce4d0;
+  color: #fce4d0;
+  color: rgb(50, 50, 50);
 }
 
 #content {
-    background-color: #fcfaf8 ;
-    height: 100vh;
-    width: 100%;
-    padding: 20px;
+  background-color: #fcfaf8;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
 }
 
 #content-header {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .project-heading {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 
-.todo, .todoDone {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70vw;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    padding: 8px 5px 8px 15px;
+.todo,
+.todoDone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70vw;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 8px 5px 8px 15px;
 }
 
 .todo {
-    border: 2px solid #feb270;
+  border: 2px solid #feb270;
 }
 
 .todoDone {
-    border: 2px solid #cfcdcb;
-    background-color: #f1f0ee;
+  border: 2px solid #cfcdcb;
+  background-color: #f1f0ee;
 }
 .todoDone .title,
 .todoDone .due-date {
-    color: rgb(182, 180, 180);
-    
+  color: rgb(182, 180, 180);
 }
 .todoDone .checkbox,
 .todoDone .editBtn {
-    background-color: #f1f0ee;
-    color: rgb(148, 148, 148);
+  background-color: #f1f0ee;
+  color: rgb(148, 148, 148);
 }
 .todoDone .description {
-    color: rgb(204, 202, 202);
+  color: rgb(204, 202, 202);
 }
 
 .todoDone:hover,
 .todoDone:hover .checkbox,
 .todoDone:hover .todo-priority,
-.todoDone:hover .editBtn{
-    background-color: #e7e5e3;
+.todoDone:hover .editBtn {
+  background-color: #e7e5e3;
 }
 
 .todo:hover {
-    background-color: #fef0e4;
+  background-color: #fef0e4;
 }
 
 .todo:hover .checkbox,
 .todo:hover .todo-priority,
 .todo:hover .editBtn {
-    background-color: #fef0e4;
+  background-color: #fef0e4;
 }
 
 .checkbox,
 .editBtn {
-    background-color: #fcfaf8;
-    padding-right: 5px;
-    font-size: 20px ;
+  background-color: #fcfaf8;
+  padding-right: 5px;
+  font-size: 20px;
 }
 
 .title {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .todo-contents {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.title ,
+.title,
 .description {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin: 0 8px 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 8px 0 8px;
 }
 
-
 .description {
-    color: rgb(148, 148, 148);
-    overflow-wrap: break-word;
-    min-width: 0;
-    width: 25vw;
+  color: rgb(148, 148, 148);
+  overflow-wrap: break-word;
+  min-width: 0;
+  width: 25vw;
 }
 .due-date {
-    margin: 0 8px 0 8px;
+  margin: 0 8px 0 8px;
 }
 
 .todo-priority {
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-weight: 100;
-    background-color: #fcfaf8;
-    cursor: default;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: 100;
+  background-color: #fcfaf8;
+  cursor: default;
 }
 
 .todoDone .todo-priority,
 .todoDone .priority-high,
 .todoDone .priority-mid,
 .todoDone .priority-low {
-    border: 2px solid #cfcdcb;
-    background-color: #f1f0ee;
-    color: #cfcdcb;
+  border: 2px solid #cfcdcb;
+  background-color: #f1f0ee;
+  color: #cfcdcb;
 }
-
 
 .priority-high {
-    border: 2px solid red;
-    color: red;
+  border: 2px solid red;
+  color: red;
 }
 .priority-mid {
-    border: 2px solid orange;
-    color: orange;
+  border: 2px solid orange;
+  color: orange;
 }
 .priority-low {
-    border: 2px solid green;
-    color: green;
+  border: 2px solid green;
+  color: green;
 }
 
 .delete-todo {
-    margin-left: 8px;
-    border-radius: 3px;
-    background-color: #f02c1a;
-    padding: 3px 8px;
-    color: white;
+  margin-left: 8px;
+  border-radius: 3px;
+  background-color: #f02c1a;
+  padding: 3px 8px;
+  color: white;
 }
 
 .delete-todo:hover {
-    background-color: #eb675b;
+  background-color: #eb675b;
 }
 .delete-todo:active {
-    background-color: #e81603;
+  background-color: #e81603;
 }
 
 .editBtn {
-    margin-left: 18px;
-    padding: 0;
+  margin-left: 18px;
+  padding: 0;
 }
 
 .material-symbols-outlined {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #project-form-container,
 #todo-form-container,
 #todo-edit-container {
-    position: fixed;
-    inset: 0;
-    
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+  position: fixed;
+  inset: 0;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
 }
 
-
 form {
-    background-color: white;
-    border-radius: 15px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 form h2 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 label,
 radio-container p {
-    font-size: 0.9em;
-    margin-bottom: 0.5rem;
+  font-size: 0.9em;
+  margin-bottom: 0.5rem;
 }
 
 input,
 textarea {
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: 1px solid #feb270;
-    margin-bottom: 2rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #feb270;
+  margin-bottom: 2rem;
 }
 
 #project-form input,
 #todoTitle,
 textarea {
-    width: 400px;
+  width: 400px;
 }
 
 input:focus,
 textarea:focus {
-    outline: none;
-    box-shadow: 0 0 2px 3px #fbddc3;
+  outline: none;
+  box-shadow: 0 0 2px 3px #fbddc3;
 }
 
 .date-radio {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
-.date-container{
-    display: flex;
-    flex-direction: column;
+.date-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .radio-container label {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .radios {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .radios label {
-    margin: 5px 12px 5px 0;
+  margin: 5px 12px 5px 0;
 }
 
 .radios input[type="radio"] {
-    accent-color: #ec493a;
-    cursor: pointer;
-    transform: scale(1.2);
-    margin: 8px
+  accent-color: #ec493a;
+  cursor: pointer;
+  transform: scale(1.2);
+  margin: 8px;
 }
 .radios input[type="radio"]:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 #project-form-btns,
 #todo-form-btns,
 #todo-edit-btns {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
-.cancelbtn, .submitbtn {
-    padding: 10px 15px;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-right: 12px;
-    border-radius: 8px;
+.cancelbtn,
+.submitbtn {
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 12px;
+  border-radius: 8px;
 }
 
 .cancelbtn {
-    background-color: #fff8f1;
-    border: 1px solid #f9e9da;
+  background-color: #fff8f1;
+  border: 1px solid #f9e9da;
 }
 .cancelbtn:hover {
-    background-color: #f9e9da;
+  background-color: #f9e9da;
 }
 
 .submitbtn {
-    background-color: #ec493a;
-    color: white;
+  background-color: #ec493a;
+  color: white;
 }
 .submitbtn:hover {
-    background-color: #d93b2c;
+  background-color: #d93b2c;
 }

@@ -7,9 +7,8 @@ import { defaultProjects, projectList } from "./models/project_list.js";
 
 loadProjects();
 
-if (!projectList || projectList.length === 0){
-    defaultProjects();
+if (!projectList || projectList.length === 0) {
+  defaultProjects();
 }
 
 renderProject();
-
